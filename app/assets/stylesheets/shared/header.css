@@ -1,0 +1,76 @@
+
+.top-page-header {
+  width: 100vw;
+  background-color: white;
+  height: 10vh;
+}
+
+.happy-home-header {
+  display: flex;
+  align-items: center;
+}
+
+.main-logo {
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+  margin-left: 4vw;
+}
+
+.happy-home-header-menu {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  width: 100%;
+  align-items: center;
+}
+.lists-left {
+  list-style: none;
+  display: flex;
+}
+
+.room-picture-menu {
+  text-decoration: none;
+  color: black;
+  margin-right: 3vw;
+}
+
+.shop-menu {
+  text-decoration: none;
+  color: black;
+}
+
+.lists-right {
+  list-style: none;
+  display: flex;
+  margin-right: 7vw;
+}
+
+.user-nickname {
+  text-decoration: none;
+  color: black;
+  margin-right: 3vw;
+}
+
+.logout {
+  text-decoration: none;
+  color: black;
+}
+
+.login {
+  text-decoration: none;
+  color: black;
+  margin-right: 3vw;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: black;
+}
+
+.post-menu {
+  text-decoration: none;
+  color: black;
+  margin-left: 3vw;
+
+}

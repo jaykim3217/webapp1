@@ -1,0 +1,27 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+
+<header class='top-page-header'>
+  <div class='happy-home-header'>
+    <div class='happy-home-logo'>
+      <%= link_to 'aihome', root_path, class: "main-logo" %>
+    </div>
+    <div class='happy-home-header-menu'>
+      <ul class='lists-left'>
+        <li><%= link_to '写真', "#", class: "room-picture-menu" %></li>
+        <li><a href="#", class='shop-menu'>Shop</a></li>
+        <li><%= link_to '写真投稿', "#", class: "post-menu" %></li>
+        <li><%= link_to '商品出品', "#", class: "post-menu" %></li>
+      </ul>
+      <ul class='lists-right'>
+        <% if logged_in? %>
+          <li><%= link_to current_user.name, user_path(current_user.id), class: "user-nickname" %></li>
+          <li><%= link_to 'ログアウト', logout_path, method: :delete, class: "logout" %></li>
+        <% else %>
+          <li><%= link_to 'ログイン', login_path, class: "login" %></li>
+          <li><%= link_to '新規登録', new_user_path, class: "sign-up" %></li>
+        <% end %>  
+        
+      </ul>
+    </div>
+  </div>
+</header>
