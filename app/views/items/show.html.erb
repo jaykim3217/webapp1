@@ -1,0 +1,35 @@
+<main>
+  <div class="item-show">
+    <div class="item-img-content">
+      <%= image_tag @item.image ,class:"item-box-img" %>
+    </div>
+    <div class="item-order">
+      <div class="item-show-brand-name"><%= @item.brand %></div>
+      <div class="item-show-product"><%= @item.item_name %></div>
+      <div class="item-show-category"><%= @item.category.name %></div>
+      <div class="item-show-price"><b><%= @item.price %></b>円</div>
+      <div class="item-show-delivery">無料配送</div>
+      <div class="item-show-order-button">
+        <a href="#", class="item-show-order-btn">商品購入</a>
+        <a href="#", class="item-show-cart-btn">買い物かご</a>
+      </div>
+    </div>
+  </div>
+  <div class="item-explain">
+
+  </div>
+  <div class="comment-box">
+    <form>
+      <textarea class="comment-text"></textarea>
+      <p class="comment-warn">
+        作成者
+      </p>
+      <button type="submit" class="comment-btn">
+        <span>コメントする<span>
+      </button>
+    </form>
+    <%= link_to '削除', item_path(@item.id), method: :delete %>
+    <%= link_to '編集', edit_item_path(@item.id), method: :get %>
+  </div>
+
+</main>
