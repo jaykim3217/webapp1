@@ -1,0 +1,69 @@
+<main>
+  <div class="item-new">
+    <h2 class="item-new-head">HappyHome</h2>
+    <%= form_with model: @item, id: 'new_post', local: true do |f| %>
+    <div class="item-new-main">
+      <div class="item-new-title">
+        <h2>商品の情報を入力してください</h2>
+      </div>
+      <div class="img-upload">
+        <div class="weight-bold-text">
+          商品画像
+          <span class="indispensable">必須</span>
+        </div>
+        <div id="previews"></div>
+        <div class="click-upload">
+          <p>
+            クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :image, id:"item-image" %>
+        </div>
+      </div>
+    </div>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        商品名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :item_name, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          商品の説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :explain, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <div class="items-detail">
+      <div class="weight-bold-text">商品の詳細</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          カテゴリー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+    </div>
+    <div class="item-price">
+      <div class="price-text">
+        <span>価格</span>
+        <span class="indispensable">必須</span>
+      </div>
+      <span class="sell-yen">¥</span>
+      <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例）300" %>
+    </div>
+    <div class="item-brand">
+      <div class="weight-bold-text">
+        ブランド
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :brand, class:"items-brand", id:"item-brand", placeholder:"ブランド名（必須 40文字まで)", maxlength:"40" %>
+    </div>
+    <div class="sell-btn-contents">
+      <%= f.submit "出品する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <% end %>
+  </div>
+
+</main>
