@@ -28,8 +28,12 @@
         <span>コメントする<span>
       </button>
     </form>
-    <%= link_to '削除', item_path(@item.id), method: :delete %>
-    <%= link_to '編集', edit_item_path(@item.id), method: :get %>
+    <% if current_user.id == @item.user.id %>
+      <%= link_to '削除', item_path(@item.id), method: :delete %>
+      <%= link_to '編集', edit_item_path(@item.id), method: :get %>
+    <% else %>
+      <%= link_to "購入", "#" %>
+    <% end %>
   </div>
 
 </main>
