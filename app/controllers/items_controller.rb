@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :login?, only: :new
+  before_action :login?, except: [:index]
 
   def index
     @items = Item.all.order(created_at: "DESC")
@@ -24,6 +24,9 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    if current_user.id != @item.user.id
+      redirect_to action: :index
+    end
   end
 
   def update
@@ -49,5 +52,11 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:item_name, :explain, :category_id, :price, :image, :brand).merge(user_id: current_user.id)
+  end
+
+  def move_to_login
+    unless user_login?
+      redirect_to login_path
+    end
   end
 end
