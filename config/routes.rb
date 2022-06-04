@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
   resources :items do
     resources :orders, only: [:index, :create]
+    resources :comments, only: :create
   end
   
   get     'login',   to: 'sessions#new'
