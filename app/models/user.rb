@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }, format: { with: VALID_PASSWORD_REGEX, message: 'は半角英数を両方含む必要があります'}
   has_many :items
   has_many :orders
+  has_many :comments
 
   validates :name, presence: true
   validates :password_digest, presence: true
