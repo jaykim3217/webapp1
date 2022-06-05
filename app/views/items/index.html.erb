@@ -1,9 +1,12 @@
 <div class="main">
+  <div class="index-picture">
+    <%= image_tag "IMG_4313.jpg", class:"top-image" %>
+  </div>
+
   <div class="items">
     <div class="item-contents">
       <h2>商品リスト</h2>
     </div>
-    
     <ul class="item-lists">
     <% @items.each do |item|%>
       <% unless item.order.present? %>

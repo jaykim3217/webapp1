@@ -17,10 +17,7 @@
       </div>
     </div>
     <%# /購入内容の表示 %>
-    <div class='login-flash-message'>
-      <%= flash[:notice] %>
-      <%= flash[:alert] %>
-    </div>
+
     <%# 支払額の表示 %>
     <div class='item-payment'>
       <h1 class='item-payment-title'>
@@ -33,9 +30,7 @@
     <%# /支払額の表示 %>
 
     <%= form_with url: item_orders_path, id: 'charge-form', class: 'transaction-form-wrap', model: @order_address, local: true do |f| %>
-    
-      <%= render 'shared/error_messages', model: f.object %>
-
+    <%= render 'shared/error_messages', model: f.object %>
       <div class='credit-card-form'>
         <h1 class='info-input-haedline'>
           クレジットカード情報入力
