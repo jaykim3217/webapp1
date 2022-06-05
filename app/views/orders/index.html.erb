@@ -17,7 +17,10 @@
       </div>
     </div>
     <%# /購入内容の表示 %>
-
+    <div class='login-flash-message'>
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
+    </div>
     <%# 支払額の表示 %>
     <div class='item-payment'>
       <h1 class='item-payment-title'>
