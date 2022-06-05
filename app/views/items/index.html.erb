@@ -6,16 +6,18 @@
     
     <ul class="item-lists">
     <% @items.each do |item|%>
-      <li class="item-list">
-        <%= link_to item_path(item.id), class: "item-content" do %>
-          <%= image_tag item.image, class: "item-image" if item.image.attached? %>
-          <div class="brand-name"><%= item.brand %></div>
-          <div class="item-explain"><%= item.explain %></div>
-          <div class="item-price"><%= item.price %><b>円</b></div>
-          <div class="item-review">review</div>
-          <div class="item-delivery">無料配送</div>
-        <% end %>
-      </li>
+      <% unless item.order.present? %>
+        <li class="item-list">
+          <%= link_to item_path(item.id), class: "item-content" do %>
+            <%= image_tag item.image, class: "item-image" if item.image.attached? %>
+            <div class="brand-name"><%= item.brand %></div>
+            <div class="item-explain"><%= item.explain %></div>
+            <div class="item-price"><%= item.price %><b>円</b></div>
+            <div class="item-review">review</div>
+            <div class="item-delivery">無料配送</div>
+          <% end %>
+        </li>
+      <% end %>
     <% end %>
     </ul>
 
