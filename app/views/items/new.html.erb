@@ -1,14 +1,12 @@
 <main>
+  <div class="item-new-title">
+      <h2>商品の情報を入力してください</h2>
+    </div>
   <div class="item-new">
-    <h2 class="item-new-head">HappyHome</h2>
     <%= form_with model: @item, id: 'new_post', local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
-
     <div class="item-new-main">
-      <div class="item-new-title">
-        <h2>商品の情報を入力してください</h2>
-      </div>
       <div class="img-upload">
         <div class="weight-bold-text">
           商品画像
@@ -16,9 +14,6 @@
         </div>
         <div id="previews"></div>
         <div class="click-upload">
-          <p>
-            クリックしてファイルをアップロード
-          </p>
           <%= f.file_field :image, id:"item-image" %>
         </div>
       </div>
@@ -38,7 +33,6 @@
       </div>
     </div>
     <div class="items-detail">
-      <div class="weight-bold-text">商品の詳細</div>
       <div class="form">
         <div class="weight-bold-text">
           カテゴリー
@@ -48,12 +42,12 @@
       </div>
     </div>
     <div class="item-price">
-      <div class="price-text">
+      <div class="weight-bold-text">
         <span>価格</span>
         <span class="indispensable">必須</span>
       </div>
       <span class="sell-yen">¥</span>
-      <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例）300" %>
+      <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例)500円~9,999,999円" %>
     </div>
     <div class="item-brand">
       <div class="weight-bold-text">
