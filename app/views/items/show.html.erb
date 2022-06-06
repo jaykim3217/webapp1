@@ -36,13 +36,12 @@
     </div>
     <h1 class="item-explain">＜コメント一覧＞</h4>
     <div id="comments", class="comments">
-      
-        <% @item.comments.each do |comment| %>
-          <div class="comment">
-            <p class="user-info"><%= comment.user.name %>： </p>
-            <p><%= comment.text%></p>
-          </div>
-        <% end %>
+      <% @item.comments.each do |comment| %>
+        <div class="comment">
+          <p class="user-info"><%= comment.user.name %>： </p>
+          <p><%= comment.text%></p>
+        </div>
+      <% end %>
     </div>
     <div class="comment-form">
       <% if logged_in? %>

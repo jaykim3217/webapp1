@@ -14,7 +14,7 @@
           <%= link_to item_path(item.id), class: "item-content" do %>
             <%= image_tag item.image, class: "item-image" if item.image.attached? %>
             <div class="brand-name"><%= item.brand %></div>
-            <div class="item-explain"><%= item.explain %></div>
+            <div class="item-explain"><%= item.item_name %></div>
             <div class="item-price"><%= item.price %><b>円</b></div>
             <span class="item-delivery">無料配送</span>
           <% end %>
