@@ -1,3 +1,57 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// user상세화면
+.user-show {
+  margin: 0 4vw;
+}
+
+.user-welcome {
+  font-size: 20px;
+  margin: 5vh 0 0 0;
+  font-style: italic;
+}
+
+.welcome-btn {
+ margin-top: 1vh;
+ display: flex;
+}
+
+.show-logout {
+  margin-right: 2vw;
+}
+
+.show-logout-btn {
+  text-decoration: none;
+  color: blue;
+}
+
+.show-root-btn {
+  text-decoration: none;
+  color: blue;
+}
+
+.show-list {
+  margin-top: 50px;
+}
+
+// sign up
+
+.users-sign-up {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0 50px;
+}
+
+.user-signup {
+  display: flex;
+  justify-content: center;
+}
+
+.field {
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.sign-up-btn {
+  display: flex;
+  justify-content: center;
+}

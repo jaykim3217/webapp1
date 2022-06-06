@@ -1,4 +1,26 @@
-<h1>Welcome</h1>
+<div class="user-show">
+  
+  <div class="user-welcome" >
+    <%= "#{current_user.name} 様の商品出品リスト" %>
+  </div>
+  <div class="show-list">
+    <ul class="item-lists">
+      <% @items.each do |item|%>
+        <% unless item.order.present? %>
+          <% if current_user.id == item.user.id %>
+            <li class="item-list">
+              <%= link_to item_path(item.id), class: "item-content" do %>
+                <%= image_tag item.image, class: "item-image" if item.image.attached? %>
+                <div class="brand-name"><%= item.brand %></div>
+                <div class="item-explain"><%= item.explain %></div>
+                <div class="item-price"><%= item.price %><b>円</b></div>
+                <div class="item-delivery">無料配送</div>
+              <% end %>
+            </li>
+          <% end %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
 
-<p>you are login</p>
-<%= link_to "Logout", logout_path, method: :delete %>
+</div>

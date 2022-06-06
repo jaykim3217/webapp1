@@ -1,45 +1,56 @@
 <main>
-  <div class="item-show">
-    <div class="item-img-content">
-      <%= image_tag @item.image ,class:"item-box-img" %>
-    </div>
-    <div class="item-order">
-      <div class="item-show-brand-name"><%= @item.brand %></div>
-      <div class="item-show-product"><%= @item.item_name %></div>
-      <div class="item-show-category"><%= @item.category.name %></div>
-      <div class="item-show-price"><b><%= @item.price %></b>円</div>
-      <div class="item-show-delivery">無料配送</div>
-      <div class="item-show-order-button">
-        <a href="#", class="item-show-order-btn">商品購入</a>
-        <a href="#", class="item-show-cart-btn">買い物かご</a>
+  <div class="show">
+    <div class="item-show">
+      <div class="item-img">
+        <div class="item-img-content">
+          <%= image_tag @item.image ,class:"item-box-img" %>
+        </div>
+      </div>
+      <div class="item-order">
+        <div class="item-show-brand-name"><%= @item.brand %></div>
+        <div class="item-show-product"><%= @item.item_name %></div>
+        <div class="item-show-category"><%= @item.category.name %></div>
+        <div class="item-show-price"><b><%= @item.price %></b>円</div>
+        <div class="item-show-delivery"><%= @item.user.name %></div>
+        <div class="item-show-order-button">
+          <div class="show-btn">
+            <% if current_user.id == @item.user.id %>
+              <div class="items-show-btn">
+                <%= link_to '削除', item_path(@item.id), method: :delete, class: "item-show-btn" %>
+              </div>
+              <div class="items-show-btn">
+                <%= link_to '編集', edit_item_path(@item.id), method: :get, class: "item-show-btn" %>
+              </div>
+            <% else %>
+              <div class="items-show-btn">
+                <%= link_to "商品購入", item_orders_path(@item.id), class:"item-order-btn", class: "item-show-btn" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="item-explain">
-
-  </div>
-  <div id="comments">
-    <h4>＜コメント一覧＞</h4>
-      <% @item.comments.each do |comment| %>
-        <div class="comment">
-          <p class="user-info"><%= comment.user.name %>： </p>
-          <p><%= comment.text%></p>
-        </div>
+    <div class="item-show-explain">
+      <h1 class="item-explain">商品説明</h1>
+      <div class="explain"><%= @item.explain %></div>
+    </div>
+    <h1 class="item-explain">＜コメント一覧＞</h4>
+    <div id="comments", class="comments">
+      
+        <% @item.comments.each do |comment| %>
+          <div class="comment">
+            <p class="user-info"><%= comment.user.name %>： </p>
+            <p><%= comment.text%></p>
+          </div>
+        <% end %>
+    </div>
+    <div class="comment-form">
+      <% if logged_in? %>
+        <%= form_with model: [@item, @comment], id: "comment-form" do |f| %>
+          <%= f.text_area :text, placeholder: "コメントする", rows: "2", class: "comment-text"%>
+          <%= f.submit "SEND", class: "comment-submit" %>
+        <% end %>
       <% end %>
+    </div>
   </div>
-  <div class="comment-form">
-    <% if logged_in? %>
-      <%= form_with model: [@item, @comment], id: "comment-form" do |f| %>
-        <%= f.text_area :text, placeholder: "コメントする", rows: "2", class: "comment-text"%>
-        <%= f.submit "SEND", class: "comment-submit" %>
-      <% end %>
-    <% end %>
-  </div>
-  <% if current_user.id == @item.user.id %>
-    <%= link_to '削除', item_path(@item.id), method: :delete %>
-    <%= link_to '編集', edit_item_path(@item.id), method: :get %>
-  <% else %>
-    <%= link_to "購入", item_orders_path(@item.id), class:"item-order-btn" %>
-  <% end %>
-
 </main>

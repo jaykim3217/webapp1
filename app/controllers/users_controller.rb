@@ -18,6 +18,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    @items = Item.all.order(created_at: "DESC")
   end
 
   private

@@ -1,3 +1,63 @@
-// Place all the styles related to the orders controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.transaction-main {
+  margin-left: 8vw;
+}
+
+.buy-item-img {
+  width: 400px;
+  margin-top: 100px;
+}
+
+.item-payment {
+  margin-top: 50px;
+}
+
+.item-payment-price {
+  font-weight: bold;
+  font-size: 40px;
+  margin-left: 30px;
+}
+
+.credit-card-form {
+  margin-top: 150px;
+}
+
+.available-card {
+  margin-top: 50px;
+}
+
+.card-logo {
+  width: 70px;
+  height: 50px;
+}
+
+.form-text-wrap {
+  margin: 30px 0;
+}
+
+.form-text{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.input-default {
+  width: 20vw;
+}
+
+.form-any {
+  color: blue;
+}
+
+.buy-btn {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.buy-red-btn {
+  width: 100%;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+}
