@@ -12,7 +12,7 @@
 - Javascript
 - Ruby on Rails
 - MySQL
-- PAY.JP　APIAPI
+- PAY.JP
 - S3
 - Git, Github
 
