@@ -100,14 +100,113 @@
   margin-top: 30px;
 }
 
-//메세지
+//show
+.show {
+  padding: 0 4vw;
+  margin-top: 100px;
+}
+
+.item-show {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.item-order {
+  width: 400px;
+  height: 600px;
+  margin-left: 50px;
+  position: absolute;
+  top: 20vh;
+  right: 10vw;
+}
+
+.item-img {
+
+  width: 100%;
+}
+
+.item-img-content {
+  justify-content: center;
+}
+.item-box-img {
+  position: absolute;
+  top: 20vh;
+  left: 10vw;
+  width: 600px;
+  height: 600px;
+  
+}
+
+
+
+
+
+.item-show-brand-name {
+  color: gray;
+  font-size: 30px;
+}
+
+.item-show-product {
+  font-size: 40px;  
+  margin-top: 20px;
+}
+
+.item-show-price {
+  font-size: 40px;
+  margin-top: 20px;
+}
+
+.item-show-category {
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.item-show-delivery {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.item-show-order-button {
+  margin-top: 30px;
+}
+
+.item-show-order-btn {
+  text-decoration: none;
+  background-color: cadetblue;
+  color: white;
+  font-size: 30px;
+  padding: 15px 40px;
+}
+
+
+
+
+
+.item-show-explain {
+  margin-top: 100px;
+}
+
+.item-explain {
+  font-size: 30px;
+}
+
+.explain {
+  width: 100%;
+  height: 100px;
+  font-style: oblique;
+}
+
 .comment-form{
   display: flex;
+  margin-bottom: 100px;
 }
 
 .comment-text{
   display: block;
   margin-top: 20px;
+  width: 40vw;
 }
 
 .back-btn {
@@ -117,6 +216,13 @@
 .comment-submit{
   display: block;
   margin-top: 20px;
+}
+
+
+.comments {
+  background-color: #eee8e8;
+  width: 40vw;
+  height: 20vh;
 }
 
 .comment{
@@ -130,4 +236,21 @@
 .user-info{
   color: gray;
   font-weight: bold;
+}
+
+.show-btn {
+  display: flex;
+}
+
+.items-show-btn {
+  margin-right: 50px;
+  
+}
+
+.item-show-btn {
+  text-decoration: none;
+  background-color: cadetblue;
+  color: white;
+  font-size: 30px;
+  padding: 15px 40px;
 }
