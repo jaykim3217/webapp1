@@ -16,10 +16,10 @@
           <div class="show-btn">
             <% if current_user.id == @item.user.id %>
               <div class="items-show-btn">
-                <%= link_to '削除', item_path(@item.id), method: :delete, class: "item-show-btn" %>
+                <%= link_to '編集', edit_item_path(@item.id), method: :get, class: "item-show-btn" %>
               </div>
               <div class="items-show-btn">
-                <%= link_to '編集', edit_item_path(@item.id), method: :get, class: "item-show-btn" %>
+                <%= link_to '削除', item_path(@item.id), method: :delete, class: "item-show-btn" %>
               </div>
             <% else %>
               <div class="items-show-btn">
