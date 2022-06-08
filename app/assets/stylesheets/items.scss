@@ -14,17 +14,20 @@
 
 .item-lists {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   list-style: none;
 }
 
 .item-list {
   margin-bottom: 20px;
+  margin-right: 10px;
 }
 
 .item-content {
   text-decoration: none;
+  display: block;
+  
 }
 
 .index-img-wrapper {
@@ -48,11 +51,17 @@
   font-size: 10px;
   color: gray;
   margin: 5px 0;
+  
 }
 
 .item-explain {
   color: black;
   font-size: 15px;
+  overflow: hidden;  		
+  text-overflow: ellipsis;  
+  white-space: nowrap; 
+  word-break: break-all;
+  width: 300px;
 }
 
 .item-price {
