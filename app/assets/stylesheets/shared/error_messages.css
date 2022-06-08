@@ -1,0 +1,12 @@
+.error-alert {
+  display: flex;
+  justify-content: center;
+}
+
+.error-messages {
+  list-style: square;
+}
+
+.error-message {
+  font-style: italic;
+}

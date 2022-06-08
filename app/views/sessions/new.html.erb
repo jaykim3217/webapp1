@@ -1,6 +1,10 @@
 <h1 class="users-sign-up">Login</h1>
-
+<div class="alert-messages">
+    <div class="alert-message"><%= notice %></div>
+    <div class="alert-message"><%= alert %></div>
+</div>
 <%= form_with url: login_path, local: true do |f| %>
+
     <div class="user-signup">
         <div class="user-sign-up">
             <div class="field">

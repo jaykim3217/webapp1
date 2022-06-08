@@ -8,11 +8,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-    if user.save
-      session[:user_id] = user.id
-      redirect_to user_path(user.id)
+    @user = User.new(user_params)
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to user_path(@user.id)
     else
+      session[:error] = @user.errors.full_messages
       render :new
     end
   end
