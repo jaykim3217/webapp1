@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_action :login?
   before_action :set_item
 
   def index
