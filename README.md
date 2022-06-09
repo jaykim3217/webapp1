@@ -7,13 +7,19 @@
 ---------
 
 # Technologies
+
+## FrontEnd
 - Html
 - Css
 - Javascript
+
+## BackEnd
 - Ruby on Rails
 - MySQL
+
+## Common
+- AWS(S3)
 - PAY.JP
-- S3
 - Git, Github
 
 ---------
