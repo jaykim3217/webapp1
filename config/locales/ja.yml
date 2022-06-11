@@ -1,0 +1,25 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+        email: メール
+        password_digest: パスワード
+        password: パスワード
+        password_confirmation: パスワード確認
+      item:
+        item_name: 商品名
+        explain: 説明
+        category_id: カテゴリー
+        price: 金額
+        image: 写真
+        brand: ブランド
+  activemodel:
+    attributes:
+      order_address:
+        postal_code: 郵便番号
+        region_id: 地域
+        city: 都市名
+        address_number: 住所
+        phone_number: 電話番号
+        token: カード情報
