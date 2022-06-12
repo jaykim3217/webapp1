@@ -16,42 +16,42 @@ RSpec.describe Item, type: :model do
       it 'item_nameが存在しないと投稿できない'do
         @item.item_name = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Item name can't be blank")
+        expect(@item.errors.full_messages).to include("商品名を入力してください")
       end
       it 'explainが存在しないと投稿できない' do
         @item.explain = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Explain can't be blank")        
+        expect(@item.errors.full_messages).to include("説明を入力してください")        
       end
       it 'category_idが--なら登録できない' do
         @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category can't be blank")            
+        expect(@item.errors.full_messages).to include("カテゴリーを入力してください")            
       end
       it 'priceが存在しないと投稿できない' do
         @item.price = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price can't be blank", "Price is not a number")            
+        expect(@item.errors.full_messages).to include("金額を入力してください", "金額は数値で入力してください")            
       end
       it 'priceが数字じゃないと投稿できない' do
         @item.price = 'aaaaa'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is not a number")            
+        expect(@item.errors.full_messages).to include("金額は数値で入力してください")            
       end
       it 'priceが500円より安いと投稿できない' do
         @item.price = '400'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be greater than or equal to 500")            
+        expect(@item.errors.full_messages).to include("金額は500以上の値にしてください")            
       end
       it 'priceが9,999,999円を超えたら投稿できない' do
         @item.price = '10000000'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be less than or equal to 9999999")            
+        expect(@item.errors.full_messages).to include("金額は9999999以下の値にしてください")            
       end
       it 'brandが存在しないと投稿できない' do
         @item.brand = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Brand can't be blank")            
+        expect(@item.errors.full_messages).to include("ブランドを入力してください")            
       end
     end
   end
