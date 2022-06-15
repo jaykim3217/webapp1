@@ -51,7 +51,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:item_name, :explain, :category_id, :price, :image, :brand).merge(user_id: current_user.id)
+    params.require(:item).permit(:item_name, :explain, :category_id, :price, {images: []}, :brand).merge(user_id: current_user.id)
   end
 
   def move_to_login

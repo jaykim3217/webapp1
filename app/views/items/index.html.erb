@@ -13,7 +13,7 @@
         <li class="item-list">
           <%= link_to item_path(item.id), class: "item-content" do %>
             <div class = index-img-wrapper >
-              <%= image_tag item.image, class: "item-image" if item.image.attached? %>
+              <%= image_tag item.image[0], class: "item-image" if item.image.attached? %>
             </div>
             <div class="brand-name"><%= item.brand %></div>
             <div class="item-explain"><%= item.item_name %></div>
