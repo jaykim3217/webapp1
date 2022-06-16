@@ -9,6 +9,7 @@ class Item < ApplicationRecord
 
   validates :category_id, presence: true, numericality: { other_than: 1 , message: "を入力してください"}
   validates :images, presence: true
+  validates :images, length: { minimum: 1, maximum: 5, message: "は1枚以上5枚以下にしてください" }
   validates :item_name, presence: true
   validates :explain, presence: true
   validates :brand, presence: true
