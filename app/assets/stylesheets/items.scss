@@ -218,12 +218,22 @@
   padding: 15px 40px;
 }
 
+.item-show-other-image {
+  height: 100px;
+  width: 100px;
+  /* 縦横比を保ったまま、画像を縦横100pxのサイズに収めるプロパティです */
+  object-fit: contain;
+}
+
+
 .other-images {
   display: flex;
 }
 
 .other-image {
   margin-right: 10px;
+  margin-top: 620px;
+  
 }
 
 .image-delete-button {
@@ -241,7 +251,7 @@
 
 
 .item-show-explain {
-  margin-top: 100px;
+  margin-top: 200px;
 }
 
 .item-explain {
