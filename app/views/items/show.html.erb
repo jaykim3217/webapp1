@@ -59,4 +59,14 @@
       <% end %>
     </div>
   </div>
+  <% if Like.find_by(user_id: current_user.id, item_id: @item.id) %>
+    <%= link_to("/likes/#{@item.id}/destroy", {method: "post"}) do %>
+      <span class="fa fa-heart like-btn-unlike"></span> 
+    <% end %> 
+  <% else %> 
+    <%= link_to("/likes/#{@item.id}/create", {method: "post"}) do %>
+      <span class="fa fa-heart like-btn"></span> 
+    <% end %> 
+  <% end %>
+  <%= @likes_count %>
 </main>

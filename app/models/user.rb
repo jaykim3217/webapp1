@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :items
   has_many :orders
   has_many :comments
+  has_many :likes
 
   validates :name, presence: true
   validates :password_digest, presence: true
